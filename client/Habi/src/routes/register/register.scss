@@ -1,0 +1,107 @@
+@import "../../responsive.scss";
+
+.registerPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  .topWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .habiText {
+      font-family: "poppins-extrabold";
+      font-size: 90px;
+    }
+    .infoDiv {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      transform: translateY(-7px);
+      .taska {
+        font-family: "poppins-medium";
+        font-size: 25px;
+      }
+      .taskb {
+        font-family: "poppins-extralight";
+        font-size: 18px;
+      }
+    }
+  }
+  .formFields {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .formGroup {
+      display: flex;
+      align-items: self-start;
+      flex-direction: column;
+      margin-bottom: 20px;
+      label {
+        display: block;
+        text-align: left;
+        font-size: 15px;
+        font-family: "poppins-regular";
+      }
+      input[type="text"],
+      input[type="email"],
+      input[type="password"] {
+        width: 400px;
+        height: 40px;
+        padding: 10px 12px;
+        font-size: 1em;
+        border: 1px solid #ccc;
+        border-radius: 15px;
+        background-color: #ffffff;
+        outline: none;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      }
+    }
+  }
+  .submitButton{
+    height: 40px;
+    width: 400px;
+    border-radius: 15px;
+    margin-top: 15px;
+    border: none;
+    background-color: #115FA7;
+    color: white;
+    cursor: pointer;
+  }
+  .lastPart{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 18px;
+      .already{
+        font-family: "poppins-medium";
+        font-size: 15px;
+        color: var(--neutral-color);
+        display: inline;
+      }
+      .loginText{
+        font-family: "poppins-medium";
+        font-size: 15px;
+        color: var(--primary-color);
+        cursor: pointer;
+        text-decoration: none;
+        display: inline;
+        border: none;
+        background-color: transparent;
+        &:hover{
+            text-decoration: underline;
+        }
+      }
+      p{
+        font-family: "poppins-medium";
+        font-size: 13px;
+        color: var(--neutral-color);
+        margin-top: 25px;
+      }
+
+  }
+
+}

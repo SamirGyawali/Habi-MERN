@@ -1,0 +1,87 @@
+@import "../../responsive.scss";
+.HomePage{
+    display: flex;
+    height: 100%;
+
+    .textcontainer{
+        margin-top: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        flex:3;
+        .titlewrapper{
+            margin-bottom: 130px;
+        }
+        .wrapper{
+            padding-right: 100px;
+
+            @include md{
+                padding: 0;
+            }
+            @include sm{
+                justify-content: flex-start;
+            }
+        }
+        .extratexts{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 60px;
+            p{
+                color: var(--neutral-color);
+                font-family: "poppins-extralight";
+                font-size: 25px;
+            }
+        }
+    }
+    .imagecontainer{
+        flex:2;
+        // background-color: #00A3FF;
+        display: flex;
+        align-items: center;
+
+        @include md{
+            display: none;
+        }
+
+        img{
+            width: 130%;
+
+            @include lg{
+                width: 100%;
+            }
+        }
+    }
+    .findyourtext{
+        margin: 0;
+        padding: 0;
+        color: var(--primary-color);
+        font-family: "poppins-regular";
+        font-size: 38px;
+
+        @include lg{
+            font-size: 30px;
+        }
+    }
+    .spacetext{
+        line-height: 0.8;
+        margin: 0;
+        padding: 0;
+        font-family: "poppins-black";
+        font-size: 100px;
+        color: var(--dark-color);
+
+        @include lg{
+            font-size: 90px;
+        }
+    }
+    .descriptiontext{
+        margin-top: 10px;
+        font-family: "poppins-medium";
+        font-size: 18px;
+
+        @include lg{
+            font-size: 16px;
+        }
+    }
+}
+

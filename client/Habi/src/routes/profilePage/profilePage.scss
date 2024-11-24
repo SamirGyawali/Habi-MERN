@@ -1,0 +1,145 @@
+@import "../../responsive.scss";
+
+.profilePage{
+    display: flex;
+    height: 100%;
+
+    @include md{
+        flex-direction: column;
+        overflow: scroll;
+    }
+
+    .details{
+        flex: 3;
+        overflow-y: scroll;
+        &::-webkit-scrollbar {
+            background-color: transparent;
+            border-radius: 50%;
+            width: 7px;
+        }
+    
+        &::-webkit-scrollbar-track {
+            background-color: transparent;
+        }
+    
+        &::-webkit-scrollbar-thumb {
+            background-color: rgb(189, 189, 189);
+            border-radius: 10px;
+            border: 1px solid #f3f7fc;
+            opacity: 0;
+            transition: opacity 0.05s ease;
+        }
+
+        @include md{
+            flex: none;
+            height: max-content;
+        }
+
+        .wrapper{
+            padding-right: 50px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+
+            .buttons{
+                button{
+                    margin: 5px;
+                    padding: 10px 20px;
+                    cursor: pointer;
+                    font-family: 'poppins-medium';
+                    border-radius: 15px;
+                    transition: background-color 0.15s ease;
+                    background-color: (var(--primary-color), 10%);
+                    border: 0.1px solid #333333;
+                    color: #333333;
+                    &:hover{
+                        background-color: var(--primary-color);
+                        border: 0.1px solid var(--primary-color);
+                        color: white;
+                    }
+                }
+            }
+        }
+
+        .title{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            font-size: 18px;
+
+            h4{
+                position: relative;
+                padding-bottom: 10px;
+                margin-bottom: 8px;
+                font-family: "poppins-light";
+                color: #181818;
+                width: 100%;
+                &::after{
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    width: 100%;
+                    height: 0.3px;
+                    background-color: var(--dark-color);
+                }
+            }
+        }
+
+        .info{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 2px;
+            margin-top: 15px;
+            gap: 80px;
+            .first{
+                display: flex;
+                align-items: center;
+                .afirst{
+                    margin-left: 18px;
+                }
+            }
+
+            span{
+                display: flex;
+                align-items: flex-start;
+                gap: 20px;
+                flex-direction: column;
+
+            }
+            .title{
+                font-family: 'poppins-medium';
+                color: #333333;
+                font-size: 18px;
+            }
+            .value{
+                font-family: 'poppins-light';
+                color: #676767;
+                font-size: 15px;
+            }
+
+            img{
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+        }
+    }
+    .chatContainer{
+        flex: 2;
+        background-color: #f3f7fc;
+        height: 100%;
+
+        @include md{
+            flex: none;
+            height: max-content;
+        }
+
+        .wrapper{
+            padding: 0px 20px;
+            height: 100%;
+        }
+    }
+}

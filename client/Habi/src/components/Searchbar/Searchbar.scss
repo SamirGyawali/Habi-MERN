@@ -1,0 +1,110 @@
+@import "../../responsive.scss";
+
+.searchbar{
+    .type{
+        button{
+            padding: 8px 0px;
+            padding-bottom: 4px;
+            margin: 10px 10px 10px 18px;
+            border: none;
+            cursor: pointer;
+            background-color: var(--light-background-color);
+            border-bottom: none;
+            &.active{
+                // background-color: var(--dark-color);
+                // color: white;
+                border-bottom: var(--dark-color) 2px solid;
+            }
+
+            &:first-child{
+                border-top-left-radius: 5px;
+                border-right: none;
+            }
+            &:last-child{
+                border-top-right-radius: 5px;
+                border-left: none;
+            }
+        }
+    }
+    form{
+        border: 1px solid #999;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 64px;
+        gap: 5px;
+
+        border-radius: 60px;
+        padding: 10px 20px;
+        width: 100%;
+        max-width: 550px;
+
+        @include sm{
+            border: 1px solid #999;
+            align-items: baseline;
+            flex-direction: column;
+            border: none;
+        }
+        
+        input{
+            border: none;
+            padding: 24px 20px;
+            width: 200px;
+
+            flex: 1;
+            border: 0;
+            outline: none;
+            background: transparent;
+            font-size: 14px;
+
+            @include lg{
+                padding: 0px 5px;
+
+                &:nth-child(2), &:nth-child(3){
+                    width: 140px;
+                }
+            }
+            @include md{
+                width: 200px;
+                &:nth-child(2), &:nth-child(3){
+                    width: auto;
+                }
+            }
+            @include sm{
+                border: 1px solid #999;
+                border-radius: 60px;
+                width: 70%;
+                padding: 20px;
+                &:hover{
+                    border: 1px solid var(--dark-color);
+                }
+                &:nth-child(2), &:nth-child(3){
+                    width: 70%;
+                }
+            }
+        }
+        button{
+            border: none;
+            cursor: pointer;
+            flex: 1;
+            background-color: transparent;
+
+            
+            width: 60px;
+            height: 60px;
+
+            @include sm{
+                padding: 10px;
+            }
+
+            img{
+                width: 25px;
+                height: 25px;
+                transition: transform 0.3s ease-in-out;
+            }
+            &:hover{
+                transform: scale(1.3);
+            }
+        }
+    }
+}
