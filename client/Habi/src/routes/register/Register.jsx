@@ -2,27 +2,33 @@ import React, { useState } from 'react';
 import './register.scss';
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
+import apiRequest from '../../components/lib/apiRequest';
 
 
 const Register = () => {
 
     const [error, setError] = useState("");
+    const [isLoading, setIsLoading] = useState(false);
     const navigate = useNavigate();
     const handleSubmit = async (e)=>{
-        e.preventDefault()
+        e.preventDefault();
+        setIsLoading(true);
+        setError("")
         const formData = new FormData(e.target);
         const username = formData.get("username");
         const email = formData.get("email");
         const password = formData.get("password");
 
         try{
-            const res = await axios.post("http://localhost:8800/api/auth/register", {username,email, password})
+            const res = await apiRequest.post("/auth/register", {username,email, password})
             console.log(res.data)
-
+            
             navigate("/login");
 
         }catch(err){
             setError(err.response.data.message)
+        }finally{
+            setIsLoading(false);
         }
 
     }
@@ -56,7 +62,7 @@ const Register = () => {
                         <label htmlFor="username">Confirm Password</label>
                         <input type="password" id='confirmPassword' name='confirmPassword' required />
                     </div>
-                    <button className='submitButton'>Register</button>
+                    <button disabled={isLoading} className='submitButton'>Register</button>
                 </form>
             </div>
                 <div className="lastPart">

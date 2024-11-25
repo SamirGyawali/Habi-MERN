@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './login.scss';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import apiRequest from '../../components/lib/apiRequest';
 
 const Login = () => {
     const [error, setError] = useState("");
@@ -10,16 +10,18 @@ const Login = () => {
     const handleSubmit = async (e)=>{
         e.preventDefault()
         setIsLoading(true);
+        setError("")
         const formData = new FormData(e.target);
-        const username = formData.get("username");
+        // const username = formData.get("username");
         const email = formData.get("email");
         const password = formData.get("password");
 
         try{
-            const res = await axios.post("http://localhost:8800/api/auth/register", {username,email, password})
-            console.log(res.data)
+            const res = await apiRequest.post("/auth/login", {email, password})
 
-            navigate("/login");
+            localStorage.setItem("user", JSON.stringify(res.data));
+
+            navigate("/");
 
         }catch(err){
             setError(err.response.data.message)
@@ -43,8 +45,8 @@ const Login = () => {
             <div className="formFields">
                 <form onSubmit={handleSubmit}>
                     <div className="formGroup">
-                        <label htmlFor="username">Email</label>
-                        <input type="text" id='username' name='username' required />
+                        <label htmlFor="email">Email</label>
+                        <input type="text" id='email' name='email' required />
                     </div>
                     <div className="formGroup">
                         <label htmlFor="password">Password</label>
