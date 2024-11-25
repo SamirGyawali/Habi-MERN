@@ -6,3 +6,4 @@ command : console-ninja node --watch app.js
 21:47
 47:06 // JWT cookie parser
 56:24 // login page
+1:06:45 // login, register page

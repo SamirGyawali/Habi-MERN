@@ -24,7 +24,7 @@ export const register = async (req, res) => {
   } catch (err) {
     console.log(err);
     res.status(500).json({
-      message: "Failed to create user",
+      message: "Failed to create user, choose unique username",
     });
   }
 };
