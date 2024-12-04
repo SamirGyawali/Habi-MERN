@@ -8,3 +8,5 @@ command : console-ninja node --watch app.js
 56:24 // login page
 1:06:45 // login, register page
 1:12:53 // login completed
+1:22:33
+1:32:04 // react context
