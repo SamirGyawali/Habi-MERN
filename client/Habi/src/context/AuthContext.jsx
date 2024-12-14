@@ -1,11 +1,26 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const AuthContext = createContext();
 
-export const AuthContextProvider = ({childern})=>{
-    const [currentUser, setCurrentUser] = useState(
-        JSON.parse(localStorage.getItem("user"))
-    );
+export const AuthContextProvider = ({ children }) => {
+  const [currentUser, setCurrentUser] = useState(
+    JSON.parse(localStorage.getItem("user")) || null
+  );
+  // console.log(currentUser)
+  const updateUser = (data)=>{
+    setCurrentUser(data);
+  }
 
-    return <AuthContext.Provider value={{}}>{childern}</AuthContext.Provider>;
-}
+  useEffect(()=>{
+    localStorage.setItem("user", JSON.stringify(currentUser));
+  }, [currentUser]);
+
+  return (
+    <AuthContext.Provider value={{ currentUser, 
+    
+    
+    updateUser }}>
+      {children}
+    </AuthContext.Provider>
+  );
+};

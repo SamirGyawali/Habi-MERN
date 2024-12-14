@@ -10,3 +10,8 @@ command : console-ninja node --watch app.js
 1:12:53 // login completed
 1:22:33
 1:32:04 // react context
+1:34:42 // react hooks and local storage
+
+1:37:00 // update user profile based on local storage cookie
+
+1:44:53 // update the profile page

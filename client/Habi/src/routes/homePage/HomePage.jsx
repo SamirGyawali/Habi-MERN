@@ -1,8 +1,12 @@
-import { useDebugValue } from "react";
+import { useContext, useDebugValue } from "react";
 import "./HomePage.scss";
 import Searchbar from "../../components/Searchbar/Searchbar";
+import { AuthContext } from "../../context/AuthContext";
 
 function HomePage() {
+  
+  const {currentUser} = useContext(AuthContext)
+  console.log(currentUser);
   return (
     <div className="HomePage">
       <div className="textcontainer">
