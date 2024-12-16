@@ -5,6 +5,7 @@ import Chat from "../../components/chat/Chat";
 import apiRequest from "../../components/lib/apiRequest";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
+import { Link } from "react-router-dom";
 
 const ProfilePage = () => {
   const { updateUser, currentUser } = useContext(AuthContext);
@@ -56,7 +57,9 @@ const ProfilePage = () => {
           </div>
           <div className="buttons">
             <button onClick={handleLogout}>Logout</button>
-            <button>Update Profile</button>
+            <Link to="/profile/update">
+              <button>Update Profile</button>
+            </Link>
             <button>Create New Post</button>
           </div>
           <div className="title">

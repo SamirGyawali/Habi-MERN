@@ -1,0 +1,94 @@
+.main-div{
+    margin: 50px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+.image-div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    // margin-bottom: 20px;
+    padding: 30px;
+    
+
+    img {
+        max-width: 400px;
+        padding: 30px;
+        // height: 120px;
+        object-fit: cover; // Ensure the image covers the area
+        // border: 1px solid #000000; // Soft blue border
+        // box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+}
+.update-form {
+    max-width: 500px;
+    // margin: 50px auto;
+    padding: 20px;
+    background-color: #f3f7fc; // Light blue background
+    // border: 1px solid #dce7f0;
+    border-radius: 8px;
+    // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+
+
+    .form-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 15px;
+
+        @media (max-width: 600px) {
+            flex-direction: column;
+        }
+
+        .form-field {
+            flex: 1;
+            margin-right: 10px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            label {
+                display: block;
+                margin-bottom: 5px;
+                font-weight: 600;
+                color: var(--dark-color); // Blue label color
+            }
+
+            input {
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #d8d8d8; // Soft blue border
+                border-radius: 4px;
+                font-size: 14px;
+                outline: none;
+                transition: border-color 0.3s ease;
+
+                &:focus {
+                    border-color: #0055b8; // Darker blue on focus
+                    box-shadow: 0 0 5px rgba(0, 85, 184, 0.3);
+                }
+            }
+        }
+    }
+        button{
+            margin: 5px;
+            width: 100%;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-family: 'poppins-medium';
+            border-radius: 15px;
+            transition: background-color 0.15s ease;
+            background-color: (var(--primary-color), 10%);
+            border: 0.1px solid #333333;
+            color: #333333;
+            &:hover{
+                background-color: var(--primary-color);
+                border: 0.1px solid var(--primary-color);
+                color: white;
+            }
+        }
+    
+}

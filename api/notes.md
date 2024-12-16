@@ -14,4 +14,6 @@ command : console-ninja node --watch app.js
 
 1:37:00 // update user profile based on local storage cookie
 
-1:44:53 // update the profile page
+1:44:53 // update the profile page front end
+
+1:48:40 // user apis
