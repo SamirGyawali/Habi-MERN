@@ -18,3 +18,4 @@ command : console-ninja node --watch app.js
 
 1:48:40 // user apis
 1:54:00
+2:11:30 // handling image uploades using react-widget (cloudnary react)

@@ -13,19 +13,19 @@ const ProfilePage = () => {
   const navigate = useNavigate();
 
   // ------- saroj changes --------
-  useEffect(() => {
-    const getUser = async () => {
-      const response = await apiRequest.get(
-        `/users/${currentUser.userinfo.id}`,
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
-      console.log("Response", response);
-    };
-  }, []);
+  // useEffect(() => {
+  //   const getUser = async () => {
+  //     const response = await apiRequest.get(
+  //       `/users/${currentUser.userinfo.id}`,
+  //       {
+  //         headers: {
+  //           "Content-Type": "application/json",
+  //         },
+  //       }
+  //     );
+  //     console.log("Response", response);
+  //   };
+  // }, []);
   // ------- up to here -------
 
   const handleLogout = async () => {
