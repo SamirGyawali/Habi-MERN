@@ -17,3 +17,4 @@ command : console-ninja node --watch app.js
 1:44:53 // update the profile page front end
 
 1:48:40 // user apis
+1:54:00

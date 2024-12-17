@@ -9,9 +9,24 @@ import { Link } from "react-router-dom";
 
 const ProfilePage = () => {
   const { updateUser, currentUser } = useContext(AuthContext);
-  // console.log("currentuser = ",currentUser);
 
   const navigate = useNavigate();
+
+  // ------- saroj changes --------
+  useEffect(() => {
+    const getUser = async () => {
+      const response = await apiRequest.get(
+        `/users/${currentUser.userinfo.id}`,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      console.log("Response", response);
+    };
+  }, []);
+  // ------- up to here -------
 
   const handleLogout = async () => {
     try {
@@ -22,21 +37,19 @@ const ProfilePage = () => {
       console.error(err);
     }
   };
+
   return (
     <div className="profilePage">
       <div className="details">
         <div className="wrapper">
           <div className="info">
             <div className="first">
-              <img
-                src={currentUser.userinfo.avatar || "/noavatar.png"}
-                alt=""
-              />
+              <img src={currentUser.avatar || "/noavatar.png"} alt="" />
             </div>
             <div className="second">
               <div className="second-a">
                 <span className="value" id="username">
-                  {currentUser.userinfo.username}
+                  {currentUser.username}
                 </span>
               </div>
               <div className="second-b">
@@ -46,7 +59,7 @@ const ProfilePage = () => {
                 </span>
                 <span className="value">
                   <img src="/email.png" alt="" />
-                  <span>{currentUser.userinfo.email}</span>
+                  <span>{currentUser.email}</span>
                 </span>
                 <span className="value">
                   <img src="/telephone.png" alt="" />

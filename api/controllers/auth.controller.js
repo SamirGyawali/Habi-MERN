@@ -55,7 +55,7 @@ export const login = async (req, res) => {
       { expiresIn: age }
     );
 
-    const { password: userPassword, ...userinfo } = user;
+    const { password: userPassword, ...userInfo } = user;
     res
       .cookie("token", token, {
         httpOnly: true,
@@ -64,7 +64,7 @@ export const login = async (req, res) => {
       })
       .status(200)
       .json({
-        userinfo,
+        ...userInfo,
       });
   } catch (err) {
     console.log(err);
