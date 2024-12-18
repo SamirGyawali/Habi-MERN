@@ -110,22 +110,6 @@ const ProfileUpdatePage = () => {
             {error && <span>error</span>}
             {/* {success && <span>
             
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
             {success}</span>} */}
           </div>
         </div>

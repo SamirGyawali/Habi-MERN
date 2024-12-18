@@ -2,6 +2,12 @@
 
 command : console-ninja node --watch app.js
 
+#### After Making changes in DBschema
+at the api folder or backend folder
+
+`npx prisma db push`
+
+
 ## Timelapse
 21:47
 47:06 // JWT cookie parser
@@ -19,3 +25,8 @@ command : console-ninja node --watch app.js
 1:48:40 // user apis
 1:54:00
 2:11:30 // handling image uploades using react-widget (cloudnary react)
+
+2:28:01 // handling post routes getting started
+
+2:31:22 // creating a dummy post
+2:37:49 // creating post data + post details in postman
