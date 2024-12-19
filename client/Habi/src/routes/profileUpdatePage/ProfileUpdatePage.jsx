@@ -10,7 +10,7 @@ const ProfileUpdatePage = () => {
   const [error, setError] = useState("");
   // const [success, setSuccess] = useState("");
 
-  const [avatar, setAvatar] = useState(currentUser.avatar);
+  const [avatar, setAvatar] = useState([]);
 
   const navigate = useNavigate();
 
@@ -28,7 +28,7 @@ const ProfileUpdatePage = () => {
         username,
         email,
         password,
-        avatar,
+        avatar:avatar[0]
       });
       // update user in context
       updateUser(res.data);
@@ -48,7 +48,7 @@ const ProfileUpdatePage = () => {
   return (
     <div className="main-div">
       <div className="image-div">
-        <img name="avatar" src={avatar || "/noavatar.png"} alt="" />
+        <img name="avatar" src={avatar[0] || currentUser.avatar || "/noavatar.png"} alt="" />
         <UploadWidget
           uwConfig={{
             cloudName: "dp4fh3lcj",
@@ -57,7 +57,7 @@ const ProfileUpdatePage = () => {
             maxImageFileSize: 2000000,
             folder: "avatars",
           }}
-          setAvatar={setAvatar}
+          setState={setAvatar}
         />
       </div>
       <form onSubmit={handleSubmit} action="">

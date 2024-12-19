@@ -1,3 +1,4 @@
+
 # Timestamp
 
     26:54 responsive navbar
@@ -16,3 +17,6 @@
     2:45:00 adding chat component in the user profile page
     2:59:00 chat section
     completed
+
+## Packages
+`npm i react-quill` to show text editor

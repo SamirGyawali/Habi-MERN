@@ -73,7 +73,9 @@ const ProfilePage = () => {
             <Link to="/profile/update">
               <button>Update Profile</button>
             </Link>
-            <button>Create New Post</button>
+            <Link to="/add">
+              <button>Create New Post</button>
+            </Link>
           </div>
           <div className="title">
             <h4>My Posts</h4>
