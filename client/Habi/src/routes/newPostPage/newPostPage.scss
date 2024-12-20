@@ -54,6 +54,39 @@
           display: flex;
           flex-direction: column;
         }
+        .image{
+          width: inherit;
+          height: inherit;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+
+          overflow-x: auto;
+          white-space: nowrap; /* Prevent line breaks */
+          scrollbar-width: thin; /* For Firefox */
+          scrollbar-color: #abb7be transparent; /* For Firefox */
+          padding-bottom: 10px; /* Add space for the scrollbar */
+          .scroll-container::-webkit-scrollbar {
+            height: 6px; /* Slim scrollbar height */
+          }
+          
+          .scroll-container::-webkit-scrollbar-thumb {
+            background: #bbb; /* Thumb color */
+            border-radius: 10px; /* Rounded corners */
+          }
+          
+          .scroll-container::-webkit-scrollbar-track {
+            background: transparent; /* Make track invisible */
+          }
+
+              img{
+                margin: 10px;
+                display: inline-block;
+                width: 150px; /* Item width */
+                height: 100px; /* Item height */
+                background-color: #cbcbcb; /* Item background color */
+              }
+        }
       }
       label {
         font-weight: 600;

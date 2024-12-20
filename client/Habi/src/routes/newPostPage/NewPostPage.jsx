@@ -3,13 +3,12 @@ import "./newPostPage.scss";
 import apiRequest from "../../components/lib/apiRequest";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
-import UploadWidget from "../../components/uploadWidget/UploadWidget"
+import UploadWidget from "../../components/uploadWidget/UploadWidget";
 
 const NewPostPage = () => {
   const [value, setValue] = useState("");
   const [images, setImages] = useState([]);
   const [error, setError] = useState("");
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -62,7 +61,7 @@ const NewPostPage = () => {
             </div>
             <div className="form-section-b">
               <div>
-                <label for="price">Price (NRP/Month)</label>
+                <label htmlFor="price">Price (NRP/Month)</label>
                 <input
                   type="number"
                   id="price"
@@ -71,8 +70,8 @@ const NewPostPage = () => {
                   required
                 />
               </div>
-              <div class="item">
-                <label for="type">Type</label>
+              <div className="item">
+                <label htmlFor="type">Type</label>
                 <select name="property">
                   <option value="room">Room</option>
                   <option value="apartment">Apartment</option>
@@ -81,8 +80,8 @@ const NewPostPage = () => {
                   <option value="land">Land</option>
                 </select>
               </div>
-              <div class="item">
-                <label for="type">Purpose</label>
+              <div className="item">
+                <label htmlFor="type">Purpose</label>
                 <select name="type">
                   <option value="rent" defaultChecked>
                     Rent
@@ -234,21 +233,21 @@ const NewPostPage = () => {
           </div>
           <div className="form-section">
             <span>Upload Images</span>
-            <div style={{maxWidth:"500px", maxHeight:"500px"}}>
               <p>Note: Size smaller than 3MB</p>
-              {images.map((image,index)=>{
-                <img src={image} key={index}alt="" />
-              })}
-            <UploadWidget uwConfig={{
-              multiple:true,
-              cloudName: "dp4fh3lcj",
-              uploadPreset: "HabiEstate",
-              maxImageFileSize: 2000000,
-              folder: "posts",
-            }}
-            setState={setImages}
-            />
-
+            <div className="image">
+                {images.map((image, index) => (
+                  <img className="scroll-images"src={image} key={index} alt="" />
+                ))}
+              <UploadWidget
+                uwConfig={{
+                  cloudName: "dp4fh3lcj",
+                  uploadPreset: "HabiEstate",
+                  multiple: true,
+                  maxImageFileSize: 2000000,
+                  folder: "posts",
+                }}
+                setState={setImages}
+              />
             </div>
           </div>
           <button>Post</button>
