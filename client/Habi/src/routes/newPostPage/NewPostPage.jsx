@@ -4,43 +4,50 @@ import apiRequest from "../../components/lib/apiRequest";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import UploadWidget from "../../components/uploadWidget/UploadWidget";
+import {useNavigate} from "react-router-dom";
 
 const NewPostPage = () => {
   const [value, setValue] = useState("");
   const [images, setImages] = useState([]);
   const [error, setError] = useState("");
 
+  const navigate = useNavigate();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
     const inputs = Object.fromEntries(formData);
 
+    
     try {
       const res = await apiRequest.post("/posts", {
         postData: {
           title: inputs.title,
           price: parseInt(inputs.price),
+          images: images,
           address: inputs.address,
           city: inputs.city,
           bedroom: parseInt(inputs.bedroom),
           bathroom: parseInt(inputs.bathroom),
-          type: inputs.type,
-          property: inputs.property,
           latitude: inputs.latitude,
           longitude: inputs.longitude,
-          images: images,
+          type: inputs.type,
+          property: inputs.property,
         },
         postDetail: {
           desc: value,
           utilities: inputs.utilities,
           pet: inputs.pet,
-          income: inputs.income,
+          payment: inputs.payment,
           size: parseInt(inputs.size),
           school: parseInt(inputs.school),
           bus: parseInt(inputs.bus),
           restaurant: parseInt(inputs.restaurant),
         },
       });
+      // console.log("Payload = ", postData, postDetail);
+      navigate("/"+res.data.id)
+      console.log(postDetail.utilities)
     } catch (err) {
       console.log(err);
     }
@@ -233,10 +240,10 @@ const NewPostPage = () => {
           </div>
           <div className="form-section">
             <span>Upload Images</span>
-              <p>Note: Size smaller than 3MB</p>
+              <p>Note: Image size must be smaller than 3MB</p>
             <div className="image">
                 {images.map((image, index) => (
-                  <img className="scroll-images"src={image} key={index} alt="" />
+                  <img src={image} key={index} alt="" />
                 ))}
               <UploadWidget
                 uwConfig={{
@@ -250,7 +257,7 @@ const NewPostPage = () => {
               />
             </div>
           </div>
-          <button>Post</button>
+          <button type="submit">Post</button>
         </form>
       </div>
     </div>

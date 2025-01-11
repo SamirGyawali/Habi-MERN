@@ -31,3 +31,7 @@ at the api folder or backend folder
 
 2:31:22 // creating a dummy post
 2:37:49 // creating post data + post details in postman
+
+2:53:00 // Completed integrating post details from frontend
+
+3:00:00 // inner html setting up for the description section

@@ -40,6 +40,11 @@
           margin-bottom: 15px;
           color: #777c9d92;
         }
+        p{
+          font-family: "Poppins-light";
+          font-size: 15px;
+          color: #7c7c7c;
+        }
         .form-section-b,
         .form-section-c,
         .property-features,
@@ -54,7 +59,7 @@
           display: flex;
           flex-direction: column;
         }
-        .image{
+        .image {
           width: inherit;
           height: inherit;
           display: flex;
@@ -69,23 +74,23 @@
           .scroll-container::-webkit-scrollbar {
             height: 6px; /* Slim scrollbar height */
           }
-          
+
           .scroll-container::-webkit-scrollbar-thumb {
             background: #bbb; /* Thumb color */
             border-radius: 10px; /* Rounded corners */
           }
-          
+
           .scroll-container::-webkit-scrollbar-track {
             background: transparent; /* Make track invisible */
           }
 
-              img{
-                margin: 10px;
-                display: inline-block;
-                width: 150px; /* Item width */
-                height: 100px; /* Item height */
-                background-color: #cbcbcb; /* Item background color */
-              }
+          img {
+            margin: 10px;
+            display: inline-block;
+            width: 150px; /* Item width */
+            height: 100px; /* Item height */
+            background-color: #cbcbcb; /* Item background color */
+          }
         }
       }
       label {
