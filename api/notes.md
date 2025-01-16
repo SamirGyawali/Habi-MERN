@@ -35,3 +35,5 @@ at the api folder or backend folder
 2:53:00 // Completed integrating post details from frontend
 
 3:00:00 // inner html setting up for the description section
+3:04:00 // starting searching implementation
+3:13:00 // finished adding query string of search result

@@ -2,8 +2,9 @@ import React from "react";
 import "./singlePage.scss";
 import Slider from "../../components/slider/Slider";
 import { singlePostData, userData } from "../../components/lib/data";
-import Map from "../../components/map/MyMap";
 import { useLoaderData } from "react-router-dom";
+import DOMPurify from "dompurify";
+import MyMap from "../../components/map/MyMap";
 
 const SinglePage = () => {
   const post = useLoaderData();
@@ -27,7 +28,7 @@ const SinglePage = () => {
                 <span>{post.user.username}</span>
               </div>
             </div>
-            <div className="bottom">{post.postDetail.desc}</div>
+            <div className="bottom" dangerouslySetInnerHTML={{__html:DOMPurify.sanitize(post.postDetail.desc)}}></div>
           </div>
         </div>
       </div>
@@ -98,7 +99,7 @@ const SinglePage = () => {
           </div>
           <p className="title">Location</p>
           <div className="mapContainer">
-            <Map items={[singlePostData]} />
+            <MyMap items={[post]} />
           </div>
           <div className="buttons">
             <button>

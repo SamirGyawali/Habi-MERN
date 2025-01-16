@@ -29,15 +29,18 @@ const Card = ({item}) => {
           <div className="features">
             <div className="feature">
               <img src="/water1.png" alt="" />
-              <span>{item.water}</span>
+              {/* <span>{item.water}</span> */}
+              <span>Inclued</span>
             </div>
             <div className="feature">
               <img src="/waste1.png" alt="" />
-              <span>{item.waste}</span>
+              {/* <span>{item.waste}</span> */}
+              <span>Inclued</span>
             </div>
             <div className="feature">
               <img src="/power.png" alt="" />
-              <span>{item.power}</span>
+              {/* <span>{item.power}</span> */}
+              <span>14/unit</span>
             </div>
           </div>
           <div className="icons">
