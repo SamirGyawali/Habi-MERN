@@ -8,6 +8,7 @@ import MyMap from "../../components/map/MyMap";
 
 const SinglePage = () => {
   const post = useLoaderData();
+  console.log(post);
   return (
     <div className="singlePage">
       <div className="details">
