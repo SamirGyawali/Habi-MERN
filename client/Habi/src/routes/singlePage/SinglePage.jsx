@@ -1,14 +1,33 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import "./singlePage.scss";
+import { singlePostData } from "../../lib/data";
 import Slider from "../../components/slider/Slider";
-import { singlePostData, userData } from "../../components/lib/data";
-import { useLoaderData } from "react-router-dom";
+import { redirect, useLoaderData, useNavigate } from "react-router-dom";
 import DOMPurify from "dompurify";
 import MyMap from "../../components/map/MyMap";
+import { AuthContext } from "../../context/AuthContext";
+import apiRequest from "../../lib/apiRequest";
 
 const SinglePage = () => {
   const post = useLoaderData();
-  console.log(post);
+  const [saved, setSaved] = useState(post.isSaved);
+  const { currentUser } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  const handleSave = async () => {
+    if (!currentUser) {
+      navigate("/login");
+    }
+    // after react 19 it's moved to useoptimistik hook
+    setSaved((prev) => !prev);
+    try {
+      await apiRequest.post("/users/save", { postId: post.id });
+    } catch (err) {
+      console.log(err);
+      setSaved((prev) => !prev);
+    }
+  };
+
   return (
     <div className="singlePage">
       <div className="details">
@@ -29,7 +48,12 @@ const SinglePage = () => {
                 <span>{post.user.username}</span>
               </div>
             </div>
-            <div className="bottom" dangerouslySetInnerHTML={{__html:DOMPurify.sanitize(post.postDetail.desc)}}></div>
+            <div
+              className="bottom"
+              dangerouslySetInnerHTML={{
+                __html: DOMPurify.sanitize(post.postDetail.desc),
+              }}
+            ></div>
           </div>
         </div>
       </div>
@@ -107,9 +131,20 @@ const SinglePage = () => {
               <img src="/chat1.png" alt="" />
               Send a Message
             </button>
-            <button>
-              <img src="/save1.png" alt="" />
-              Save the Place
+            <button onClick={handleSave}>
+              {saved ? (
+                <>
+                  Place Saved
+                  <img src="/redHeart.png" alt="" />
+                </>
+              ) : (
+                <>
+                  Save the place
+                  <img src="/save1.png"></img>
+                </>
+              )}
+
+              {/* {saved ? "Place Saved" : "Save the Place"} */}
             </button>
           </div>
         </div>

@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import "./profileUpdatePage.scss";
 import { AuthContext } from "../../context/AuthContext";
-import apiRequest from "../../components/lib/apiRequest";
+import apiRequest from "../../lib/apiRequest"
 import { useNavigate } from "react-router-dom";
 import UploadWidget from "../../components/uploadWidget/UploadWidget";
 

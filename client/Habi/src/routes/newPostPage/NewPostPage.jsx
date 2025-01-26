@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./newPostPage.scss";
-import apiRequest from "../../components/lib/apiRequest";
+import apiRequest from "../../lib/apiRequest"
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import UploadWidget from "../../components/uploadWidget/UploadWidget";

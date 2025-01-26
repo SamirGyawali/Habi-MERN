@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './register.scss';
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
-import apiRequest from '../../components/lib/apiRequest';
+import apiRequest from "../../lib/apiRequest"
 
 
 const Register = () => {

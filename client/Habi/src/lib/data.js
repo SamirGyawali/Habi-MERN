@@ -4,7 +4,7 @@ export const listData = [
     {
       id: 1,
       title: "1BHK Near Amrit Science Campus",
-      img: "https://images.pexels.com/photos/1918291/pexels-photo-1918291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      images: ["https://images.pexels.com/photos/1918291/pexels-photo-1918291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"],
       water: "included",
       waste: "included",
       power: "15 per unit",
@@ -16,7 +16,7 @@ export const listData = [
     {
       id: 2,
       title: "Double room near LOD",
-      img: "https://images.pexels.com/photos/1428348/pexels-photo-1428348.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      images: ["https://images.pexels.com/photos/1428348/pexels-photo-1428348.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"],
       water: "included",
       waste: "included",
       power: "20 per unit",
@@ -28,7 +28,7 @@ export const listData = [
     {
       id: 3,
       title: "A New Apartment in Lainchur!",
-      img: "https://images.pexels.com/photos/2062426/pexels-photo-2062426.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      images: ["https://images.pexels.com/photos/2062426/pexels-photo-2062426.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"],
       water: "200",
       waste: "100",
       power: "14 per unit",
@@ -40,7 +40,7 @@ export const listData = [
     {
       id: 4,
       title: "2BHK for Famliy near Baneswor",
-      img: "https://images.pexels.com/photos/2467285/pexels-photo-2467285.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      images: ["https://images.pexels.com/photos/2467285/pexels-photo-2467285.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"],
       water: "included",
       waste: "100",
       power: "18 per unit",
@@ -52,7 +52,7 @@ export const listData = [
     {
       id: 5,
       title: "Single room for student",
-      img: "https://images.pexels.com/photos/276625/pexels-photo-276625.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      images: ["https://images.pexels.com/photos/276625/pexels-photo-276625.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"],
       water: "100",
       waste: "Included",
       power: "16 per unit",
@@ -64,7 +64,7 @@ export const listData = [
     {
       id: 6,
       title: "Apartment near kamalphokari",
-      img: "https://images.pexels.com/photos/271816/pexels-photo-271816.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      images: ["https://images.pexels.com/photos/271816/pexels-photo-271816.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"],
       water: "100",
       waste: "100",
       power: "12 per unit",
@@ -76,7 +76,7 @@ export const listData = [
     {
       id: 7,
       title: "Single room available near Newroad",
-      img: "https://images.pexels.com/photos/2029667/pexels-photo-2029667.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      images: ["https://images.pexels.com/photos/2029667/pexels-photo-2029667.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"],
       water: "100",
       waste: "200",
       power: "14 per unit",
@@ -88,7 +88,7 @@ export const listData = [
     {
       id: 8,
       title: "1BHK available at Gangabu",
-      img: "https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      images: ["https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"],
       water: "Included",
       waste: "100",
       power: "15 per unit",

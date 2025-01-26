@@ -50,7 +50,7 @@ export const updateUser = async (req, res) => {
       },
     });
     const { password: userPassword, ...rest } = updatedUser;
-    
+
     res.status(200).json(rest);
   } catch (err) {
     console.log(err);
@@ -83,30 +83,29 @@ export const savePost = async (req, res) => {
 
   try {
     const savedPost = await prisma.savedPost.findUnique({
-      where:{
-        userId_postId:{
-          userId:tokenUserId,
-          postId,
-        }
-      }
+      where: {
+        userId_postId: {
+          userId: tokenUserId,
+          postId: postId,
+        },
+      },
     });
 
-    if(savedPost){
+    if (savedPost) {
       await prisma.savedPost.delete({
-        where:{
-          id: savePost.id,
+        where: {
+          id: savedPost.id,
         },
       });
-      res.status(200).json({message:"Post removed from saved list"})
-    }
-    else{
+      res.status(200).json({ message: "Post removed from saved list" });
+    } else {
       await prisma.savedPost.create({
-        data:{
-          userId:tokenUserId,
+        data: {
+          userId: tokenUserId,
           postId: postId,
         },
       });
-      res.status(200).json({message:"Post saved"});
+      res.status(200).json({ message: "Post saved" });
     }
   } catch (err) {
     console.log(err);

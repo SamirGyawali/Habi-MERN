@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react";
 import "./profilePage.scss";
 import List from "../../components/list/List";
 import Chat from "../../components/chat/Chat";
-import apiRequest from "../../components/lib/apiRequest";
+import apiRequest from "../../lib/apiRequest"
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import { Link } from "react-router-dom";
