@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import "./singlePage.scss";
 import { singlePostData } from "../../lib/data";
 import Slider from "../../components/slider/Slider";
-import { redirect, useLoaderData, useNavigate } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import DOMPurify from "dompurify";
 import MyMap from "../../components/map/MyMap";
 import { AuthContext } from "../../context/AuthContext";
@@ -10,7 +10,9 @@ import apiRequest from "../../lib/apiRequest";
 
 const SinglePage = () => {
   const post = useLoaderData();
+  console.log(post);
   const [saved, setSaved] = useState(post.isSaved);
+  console.log(saved);
   const { currentUser } = useContext(AuthContext);
   const navigate = useNavigate();
 
@@ -21,7 +23,7 @@ const SinglePage = () => {
     // after react 19 it's moved to useoptimistik hook
     setSaved((prev) => !prev);
     try {
-      await apiRequest.post("/users/save", { postId: post.id });
+      await apiRequest.post("/users/save/", { postId: post.id });
     } catch (err) {
       console.log(err);
       setSaved((prev) => !prev);

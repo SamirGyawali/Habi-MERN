@@ -112,3 +112,27 @@ export const savePost = async (req, res) => {
     res.status(500).json({ message: "failed to delete user" });
   }
 };
+
+
+export const profilePosts = async (req, res)=>{
+  const tokenUserId = req.params.userId;
+  try{
+    const userPosts = await prisma.post.findMany({
+      where: {userId: tokenUserId}
+    });
+    const saved = await prisma.savedPost.findMany({
+      where:{
+        userId:tokenUserId
+      },
+      include:{
+        post:true,
+      }
+    });
+
+    const savedPosts = saved.map(item=>item.post);
+    res.status(200).json({userPosts, savedPosts});
+  }catch(err){
+    console.log(err)
+    res.status(500).json({message: "Failed to get profile posts"})
+  }
+};

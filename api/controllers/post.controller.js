@@ -39,6 +39,8 @@ export const getPost = async (req, res) => {
       },
     });
 
+
+    // save post not working don't know why
     let userId;
 
     const token = req.cookies?.token;
