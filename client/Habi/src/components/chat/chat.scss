@@ -41,7 +41,8 @@
       cursor: pointer;
       border-bottom: 0.2px solid #f3f7fc;
       &:hover {
-        border-bottom: 0.2px solid var(--dark-color);
+        // border-bottom: 0.2px solid var(--dark-color);
+        box-shadow: 0 4px 8px rgba(174, 174, 174, 0.2);
       }
 
       img {
@@ -54,7 +55,7 @@
       span {
         font-family: "poppins-medium";
         font-size: 16px;
-        color: #828282;
+        color: #393030;
       }
     }
   }
